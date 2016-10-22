@@ -2,7 +2,7 @@ import re
 import os
 
 # fileName = "Number of Islands.py"
-fileName = max(os.listdir('.'), key = os.path.getctime)
+fileName = max([f for f in os.listdir('.') if re.match(r'[\w ]*\.py', f)], key = os.path.getctime)
 print( fileName )
 with open( fileName, 'r' ) as f:
 	content = f.read()
