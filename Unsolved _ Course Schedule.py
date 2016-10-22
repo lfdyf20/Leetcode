@@ -22,3 +22,6 @@ numCourses, prerequisites = 2, [[1,0],[0,1]]
 
 sl = Solution()
 print( sl.canFinish( numCourses, prerequisites ) )
+
+
+print( "hi, world" )
