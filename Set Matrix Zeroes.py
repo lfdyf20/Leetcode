@@ -1,0 +1,43 @@
+import numpy as np
+class Solution(object):
+    def setZeroes(self, matrix):
+        """
+        :type matrix: List[List[int]]
+        :rtype: void Do not return anything, modify matrix in-place instead.
+        """ 
+        row = []
+        vol = []
+        for i in range(len(matrix)):
+        	for j in range(len(matrix[0])):
+        		if matrix[i][j] == 0:
+        			row += [i]
+        			vol += [j]
+        for i in range(len(matrix)):
+        	if i in row:
+        		matrix[i] = [0] * len(matrix[i])
+        	else:
+        		for j in vol:
+        			matrix[i][j] = 0
+        return matrix
+        
+
+
+
+
+
+
+
+
+
+
+
+matrix = [
+	[1,2,3,4],
+	[2,0,0,1],
+	[3,4,5,1],
+	[3,1,2,0]
+]
+matrix = [[0]]
+sl = Solution()
+print( sl.setZeroes( matrix ) )
+print(np.matrix(matrix))

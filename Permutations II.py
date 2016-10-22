@@ -1,0 +1,31 @@
+class Solution(object):
+	def permuteUnique(self, nums):
+		"""
+		:type nums: List[int]
+		:rtype: List[List[int]]
+		"""
+		res = [[]]
+		for i in nums:
+			temp = []
+			for path in res:
+				for t in range(len(path)+1):
+					temp += [path[:t] + [i] + path[t:]]
+					if t < len(path) and path[t]== i:
+						break
+			res = temp
+		return res
+
+
+
+
+
+
+
+
+nums = [1,2,1]
+
+sl = Solution()
+print( sl.permuteUnique( nums ) )
+
+
+# print( [a + b for a in [1,2] for b in [3,4]] )

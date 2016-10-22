@@ -1,0 +1,26 @@
+class Solution(object):
+    def combinationSum4(self, nums, target):
+        """
+        :type nums: List[int]
+        :type target: int
+        :rtype: int
+        """
+        count = [1]
+        nums.sort()
+        for i in range(1, target+1):
+            amount = 0
+            for num in nums:
+                if num > i:
+                    break
+                amount += count[i-num]
+    
+            count.append(amount)
+        return count[-1]
+
+
+
+
+nums = [2]
+target = 4
+sl = Solution()
+print( sl.combinationSum4( nums, target ) )

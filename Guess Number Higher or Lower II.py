@@ -1,0 +1,21 @@
+class Solution(object):
+	def getMoneyAmount(self, n):
+		"""
+		:type n: int
+		:rtype: int
+		""" 
+		need = [[0] * (n+1) for _ in range(n+1)]
+		print( repr(need) )
+		for lo in range(n, 0, -1):
+			for hi in range(lo+1, n+1):
+				need[lo][hi] = min(x + max(need[lo][x-1], need[x+1][hi])
+								   for x in range(lo, hi))
+		return need[1][n]
+
+
+
+
+
+n = 5
+sl = Solution()
+print( sl.getMoneyAmount(n) )
