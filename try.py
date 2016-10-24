@@ -1,8 +1,2 @@
-
-a = [1,2,3,4]
-for i in range(len(a)-1):
-	print(a[i])
-
-print(a[0:1])
-
-en
+import math
+print(math.sqrt(11))
