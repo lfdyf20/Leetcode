@@ -11,11 +11,11 @@ class Solution(object):
     	if n == 2 or n == 3:
     		return n - 1
     	if n % 3 == 0:
-    		return 3**(n/3)
+    		return 3**(n//3)
     	if n % 3 == 1:
-    		return 3**(n/3 - 1)*4
+    		return 3**(n//3 - 1)*4
     	if n % 3 == 2:
-    		return 3**(n/3)*2
+    		return 3**(n//3)*2
     	"""
 		From the hint:
 		7 = 3 + 4 = 12
@@ -25,10 +25,6 @@ class Solution(object):
 		11 = 3 + 3 + 3 + 2 = 54
 		12 = 3 + 3 + 3 + 3 = 81
 		"""
-
-
-
-
 
     def integerBreak(self, n):
         """
@@ -63,11 +59,28 @@ class Solution(object):
 
 
 
+    def ib(self, n):
+        if n < 4:
+            return n-1
+        if n == 4:
+            return 4
+        res = 1
+        while n > 4:
+            res *= 3
+            n = n - 3
+        res *= n
+        return res
 
 
 
 
-n = 10
+
+
+
+
+n = 6
 sample = Solution()
 print( sample.online_integerBreak(n) )
+print( sample.integerBreak(n) )
+print( sample.ib(n) )
 # print(7%2)

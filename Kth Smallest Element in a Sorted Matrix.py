@@ -1,3 +1,4 @@
+import heapq
 class Solution(object):
     def kthSmallest(self, matrix, k):
         """
@@ -12,7 +13,8 @@ class Solution(object):
         sortList.sort()
         return sortList[k-1]
         
-
+    def ks(self, matrix, k):
+        return list(heapq.merge(*matrix))[k-1]
 
 
 
@@ -25,3 +27,4 @@ matrix = [
 k = 8
 sl = Solution()
 print( sl.kthSmallest(matrix, k) )
+print( sl.ks(matrix, k) )
