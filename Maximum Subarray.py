@@ -11,11 +11,24 @@ class Solution(object):
         		maxVal = nums[i]
         return maxVal
 
+    def ms( self, nums ):
+        """
+        :type nums: List[int]
+        :rtype: int
+        """
+        temp = nums[0]
+        maxVal = nums[0]
+        for i in nums[1:]:
+            temp = max(0, temp)
+            temp += i
+            maxVal = max( i , temp, maxVal )
+        return maxVal
 
 
 
-nums = [-2,1,-3,4,-1,2,1,-5,4]
+# nums = [-1,1,2,1]
+nums = [-2,1,3,1,4,-1,-5,4,-39,12]
 sample = Solution()
+print( sample.ms(nums) )
 print( sample.maxSubArray(nums) )
-# print( sample.maxToEnd( nums ))
-# print( len(nums) )
+

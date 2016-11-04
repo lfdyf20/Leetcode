@@ -5,12 +5,12 @@ class Solution(object):
         :type amount: int
         :rtype: int
         """
+
         Max = float('inf')
         record = [0] + [Max] * amount
         for i in range(1, amount+1):
         	record[i] = min( [ record[i-c] if i-c>=0 else Max for c in coins ] ) + 1
         return [ record[amount], -1 ][ record[amount] == Max ]
-
 
     #This is slow 
     #     coins.sort(reverse = True)

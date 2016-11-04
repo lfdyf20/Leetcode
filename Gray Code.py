@@ -14,7 +14,7 @@ class Solution(object):
 
 
 
-n = 3
+n = 4
 sl = Solution()
 print( sl.grayCode(n) )
 

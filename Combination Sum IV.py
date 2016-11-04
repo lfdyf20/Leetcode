@@ -17,10 +17,28 @@ class Solution(object):
             count.append(amount)
         return count[-1]
 
+    def cs(self, nums, target):
+        def travel( target, nums, path, res ):
+            if target == 0:
+                res.append( path )
+                return
+            if nums == []:
+                return
+            if target < 0 or target < nums[0]:
+                return
+            for i in range(len(nums)):
+                travel( target-nums[i], nums, path+[nums[i]], res )
+            return
+        
+        res = []
+        travel( target, nums, [], res )
+        return res
 
 
 
-nums = [2]
+
+nums = [3,1,2,4]
 target = 4
 sl = Solution()
 print( sl.combinationSum4( nums, target ) )
+print( sl.cs(nums, target) )
