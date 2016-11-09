@@ -13,7 +13,7 @@ class Solution(object):
 			record[num][num] = record[den][den] = 1
 			record[num][den] = val
 			record[den][num] = 1/val
-		# print(repr(record))
+		print(repr(record))
 		for k in record:
 			for i in record[k]:
 				for j in record[k]:

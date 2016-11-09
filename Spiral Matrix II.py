@@ -45,9 +45,22 @@ class Solution(object):
 			count += 1
 		return ma
 
+	def generateMatrix2(self, n):  
+	    result = [[0 for i in range(n)] for j in range(n)]
+	    coord = [[(i,j) for j in range(n)] for i in range(n)]
+	    
+	    count = 1
+	    
+	    while coord:
+	        for x, y in coord.pop(0):
+	            result[x][y] = count
+	            count += 1
+	        coord = zip(*coord)[::-1]
+
+	    return result
 
 
-n = 4
+n = 5
 sl = Solution()
 res = sl.generateMatrix(n)
 print(np.matrix(res))
