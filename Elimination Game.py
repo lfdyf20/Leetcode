@@ -21,13 +21,24 @@ class Solution(object):
 
 		return head 
 
+	def lr(self, n):
+		l = [ i for i in range(1,n+1)]
+		while len(l) != 1:
+			l = l[1::2]
+			if len(l) == 1:
+				return l[0]
+			l = l[::-1]
+		return l[0]
 
 
 
 
 
-n = 10
+
+
+n = 10000000
 
 sl = Solution()
 print( sl.lastRemaining( n ) )
+print( sl.lr(n) )
 
