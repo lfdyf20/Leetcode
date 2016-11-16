@@ -10,6 +10,7 @@ class Solution(object):
 			for path in res:
 				for t in range(len(path)+1):
 					temp += [path[:t] + [i] + path[t:]]
+					print(temp)
 					if t < len(path) and path[t]== i:
 						break
 			res = temp

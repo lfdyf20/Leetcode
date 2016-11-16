@@ -23,8 +23,23 @@ class Solution(object):
         	curr += nums[curr]
         return True
 
+    def jp(self, nums):
+        maxlen = 0
+
+        for ind, num in enumerate(nums):
+            if maxlen >= len(nums)-1:
+                return True
+            if ind > maxlen:
+                return False
+            maxlen = max( maxlen, ind + num )
+        else:
+            return True
+
 
 nums = [3,8,1,0,0,0,0,2]
-nums = [2,2,0,1] 
+nums = [2,2,0,1]
+nums = [3,2,1,0,4]
+nums = [1] 
 sl = Solution()
 print( sl.canJump( nums ) )
+print( sl.jp(nums) )

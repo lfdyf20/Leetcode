@@ -1,4 +1,5 @@
 from collections import Counter
+from collections import defaultdict
 import time
 class Solution(object):
     def groupAnagrams(self, strs):
@@ -30,7 +31,17 @@ class Solution(object):
         # 	if flag == 0:
         # 		res = res + [[i]]
         # return res
-        	
+
+    def ga(self, strs):
+        dic = defaultdict( list )
+        for word in strs:
+        	dic[ ''.join(sorted(word)) ] += [word]
+        
+        res = []
+        for ind, words in dic.items():
+            res.append( words )
+        return res
+
 
         
 
@@ -44,12 +55,6 @@ start = time.time()
 print( sl.groupAnagrams( strs ) )
 print( "time: ", time.time() - start )
 
-# a = "eate"
-# b = "atee"
-# aset = set(a)
-# bset = Counter(b)
-# print(aset)
-# print(aset == bset)
-
-# count = Counter([tuple(sorted(s)) for s in strs])
-# print(count)
+# start = time.time()
+# print( sl.ga( strs ) )
+# print( "time: ", time.time() - start )

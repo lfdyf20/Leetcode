@@ -1,3 +1,4 @@
+import math
 class Solution(object):
     def uniquePathsWithObstacles(self, obstacleGrid):
         """
@@ -23,6 +24,21 @@ class Solution(object):
         return res[-1][-1]
 
 
+    # def up(self, obstacleGrid):
+    #     def count(m, n):
+    #         return int(math.factorial(m + n - 2) / (math.factorial(m - 1) * math.factorial(n - 1)))
+
+    #     m, n = len(obstacleGrid), len(obstacleGrid[0])
+    #     total = count(m, n)
+
+    #     for i in range(m):
+    #         for j in range(n):
+    #             print(i,j)
+    #             if obstacleGrid[i][j] != 0:
+    #                 total -= count(m - i, n - j)
+    #     return max(total, 0)
+
+
 
 obstacleGrid = [
   [0,3,0],
@@ -30,5 +46,8 @@ obstacleGrid = [
   [0,0,0]
 ]
 
+obstacleGrid =[[0,0],[0,1]]
+
 sl = Solution()
 print( sl.uniquePathsWithObstacles( obstacleGrid ) )
+# print( sl.up(obstacleGrid) )

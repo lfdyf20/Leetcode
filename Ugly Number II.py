@@ -18,6 +18,20 @@ class Solution(object):
         		i += 1
         return e
 
+    def nthUglyNumber2(self, n):
+        """
+        :type n: int
+        :rtype: int
+        """
+        primes = [2,3,5]
+        index, uglies = [0]*len(primes), [1]
+        while len(uglies) < n:
+            uglies.append( min( [p * uglies[index[i]] for i,p in enumerate( primes )] ) )
+            for i, p in enumerate( primes ):
+                if p * uglies[ index[i] ] == uglies[-1]:
+                    index[i] += 1
+        return uglies[-1]
+
 
 
 

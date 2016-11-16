@@ -1,5 +1,9 @@
-a = [1,2,3,4, 6]
-b = a[::2]
-print(b)
+import numpy as np
+
+a = "aaaaaaa"
+
+print(a[::-1]==a)
+
+
 
 

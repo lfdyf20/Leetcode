@@ -46,10 +46,20 @@ class Solution(object):
 	# 		self.findSl( n-h**2, path+[h**2],  minLen, res )
 	# 		h -= 1
 
+	# def ns(self, n):
+	# 	h = int( n**0.5 )
+	# 	cd = sorted([ i**2 for i in range(1, h) ], reverse=True)
 
 
 
 
-n = 487
+
+
+
+
+
+
+n = 83
 sl = Solution()
 print( sl.numSquares(n) )
+# print( sl.ns(n) )

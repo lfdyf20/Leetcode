@@ -9,7 +9,7 @@ class Solution(object):
 		def search(n):
 			lo, hi = 0, len(nums)
 			while lo < hi:
-				mid = floor((lo + hi) / 2)
+				mid = ( lo + hi )//2
 				if nums[mid] >= n:
 					hi = mid
 				else:
@@ -19,7 +19,10 @@ class Solution(object):
 		return [lo, search(target+1)-1] if target in nums[lo:lo+1] else [-1, -1]
 
 
-nums, target = [5,7,7,8,8,10], 10
+
+
+
+nums, target = [5,7,7,8,8,10], 7
 
 sl = Solution()
 print( sl.searchRange( nums, target ) )

@@ -19,6 +19,24 @@ class Solution(object):
         		dic[curr] = 1
         return res
 
+    def findRepeatedDnaSequences2(self, s):
+        """
+        :type s: str
+        :rtype: List[str]
+        """
+        if len(s)<=10:
+            return []
+        dic = {}
+        res = []
+        for i in range( len(s)-9 ):
+            curr = s[i:i+10]
+            if curr in dic:
+                if curr not in res:
+                    res.append(curr)
+            else:
+                dic[curr] = 1
+        return res
+
 
 # s = "AAAAACCCCCAAAAACCCCCCAAAAAGGGTTT"
 s = "AAAAAAAAAAAAA"

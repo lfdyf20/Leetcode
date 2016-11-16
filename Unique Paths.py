@@ -6,7 +6,7 @@ class Solution(object):
         :type n: int
         :rtype: int
         """ 
-        # return int(math.factorial(m + n - 2) / (math.factorial(m - 1) * math.factorial(n - 1)))
+        return int(math.factorial(m + n - 2) / (math.factorial(m - 1) * math.factorial(n - 1)))
         res = [[0]*n]*m
         for i in range( m ):
         	for j in range( n ):

@@ -19,6 +19,28 @@ class Solution(object):
         		for j in vol:
         			matrix[i][j] = 0
         return matrix
+
+    def sz(self, matrix):
+        for i in range(len(matrix)):
+            for j in range(len(matrix[i])):
+                if matrix[i][j] == 0:
+                    self.deal( matrix, i, j )
+
+        for i in range(len(matrix)):
+            for j in range(len(matrix[i])):
+                if matrix[i][j] == '*':
+                    matrix[i][j] = 0
+
+
+    def deal(self, matrix, i, j ):
+        for colInd in range(len(matrix[i])):
+            print(colInd)
+            if matrix[i][colInd] != 0 and matrix[i][colInd] != '*':
+                matrix[i][colInd] = '*'
+        for rowInd in range(len(matrix)):
+            if matrix[rowInd][j] != 0 and matrix[rowInd][j] != '*':
+                matrix[rowInd][j] = '*'
+
         
 
 
@@ -37,7 +59,10 @@ matrix = [
 	[3,4,5,1],
 	[3,1,2,0]
 ]
-matrix = [[0]]
+# matrix = [[0]]
 sl = Solution()
-print( sl.setZeroes( matrix ) )
-print(np.matrix(matrix))
+# print( sl.setZeroes( matrix ) )
+# print(np.matrix(matrix))
+
+sl.sz(matrix)
+print(np.array(matrix))

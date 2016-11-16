@@ -7,6 +7,7 @@ class Solution(object):
         S = {-1: set()}
         for i in sorted(nums):
         	S[i] = max( (S[k] for k in S if i%k == 0), key=len )|{i}
+        print( S )
         return list(max(S.values(), key=len))
 
 
@@ -25,8 +26,6 @@ class Solution(object):
         # 	comb += temp
         # 	comb.append([i])
         # return max(comb, key = len)
-
-
 
 
 nums = [3,4,16,8]

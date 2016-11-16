@@ -24,8 +24,6 @@ class Solution(object):
 
 
 nums, target = [1,2,1,-4], 1
-nums.reverse()
-print( nums )
 
 sl = Solution()
 print( sl.threeSumClosest( nums, target ) )

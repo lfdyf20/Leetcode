@@ -16,8 +16,9 @@ class Solution(object):
 			subset = subset + temp
 		return subset
 
-
 nums = [2,1,2,1,3]
 sl =Solution()
 print( sl.subsetsWithDup(nums) )
 print(len(sl.subsetsWithDup(nums)))
+print(sl.sbs( nums ))
+print(len(sl.sbs(nums)))
