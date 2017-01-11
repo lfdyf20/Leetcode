@@ -1,9 +1,5 @@
-import numpy as np
+from collections import Counter
 
-a = "aaaaaaa"
+a = [1,2,3,3,4]
 
-print(a[::-1]==a)
-
-
-
-
+print(sorted(set(a), reverse=True)[0])

@@ -1,4 +1,7 @@
+import time
 from collections import deque
+from collections import defaultdict
+from itertools import combinations
 class Solution(object):
     def ladderLength(self, beginWord, endWord, wordList):
         """
@@ -37,44 +40,75 @@ class Solution(object):
 
 
         d = constructDic( set(wordList) | set([beginWord, endWord])) 
+        # print(d)
         return bfs(beginWord, endWord, d)
         
 
+    def ll(self, beginWord, endWord, wordList):
+        def check(word1, word2):
+            count = 0
+            for i, j in zip(word1, word2):
+                if i != j:
+                    count += 1
+            if count == 1:
+                return True
+            else:
+                return False
 
-     
+        if beginWord not in wordList:
+            wordList.append(beginWord)
+        if endWord not in wordList:
+            wordList.append( endWord )
+        rec = defaultdict( set )
+        for i, j in combinations(wordList, 2):
+            if check( i, j ) == True:
+                rec[ i ].add(j)
+                rec[ j ].add(i)
+        # print(rec)
 
-    #     dic = {}
-    #     for word in wordList:
-    #     	if word[0] in dic:
-    #     		if word[-1] in dic[word[0]]:
-    #     			continue
-    #     		else:
-    #     			dic[word[0]].append( word[0] )
-    #     	else:
-    #     		dic[word[0]] = [word[-1]]
-        
-    #     st = beginWord[0]
-    #     ed = endWord[0]
-    #     minV = self.travel( st, ed, dic )
-    #     print(minV)
+        count = 0
 
-    # def travel(self, st, ed, dic):
-    # 	print(st, ed)
-    # 	print(dic)
-    # 	if ed in dic[st]:
-    # 		return 1
-    # 	minV = 1000
-    # 	for i in dic[st]:
-    # 		minV = min(self.travel( i, ed, dic)+1, minV)
-    # 	return minV
+        visited = set()
+        leaves = set([ beginWord ])
+
+        while count < 10:
+            count += 1
+            newleaves = set()
+            for word in leaves:
+                # print( "curr word is : ", word )
+                visited.add( word )
+
+                if endWord in visited:
+                    return count
+                if len(visited) == len( wordList ):
+                    return 0
+
+                newleaves = newleaves | rec[ word ]
+            if leaves == newleaves:
+                return 0
+            leaves = newleaves.copy()
+            # print(leaves)
+            
+
+        # rec = defaultdict(set)
+        # for word in wordList:
+
+
 
 
 
 
 
 beginWord = "hit"
-endWord = "cog"
-wordList = ["hot","dot","dog","lot","log", "tbc"]
+endWord = "coa"
+wordList = ["hot","dot","dog","lot","log", "tbc", "cig", "cit", "cia", "hta", "hoa"]
 
 sl = Solution()
+
+st = time.time()
 print( sl.ladderLength( beginWord, endWord, wordList ) )
+print( time.time() - st )
+
+# st = time.time()
+# print( sl.ll( beginWord, endWord, wordList ) )
+# print( time.time() - st )

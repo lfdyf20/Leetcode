@@ -98,19 +98,12 @@ class Solution(object):
 
 
 
-
-
-
-
-
 sl = Solution()
 S = ["3*2+4/2", "0/1", "0*1", "2/2/3", "2+4*12-43","14/3*2"]
 for s in S:
-	my = sl.calculate(s)
-	his = sl.calculate2(s)
-	print( my == his, my, his )
+    res1 = sl.calculate(s)
+    # res2 = sl.cc(s)
+    # print(res1==res2, res1, res2)
+
 # s = "2+4*12-43"
-# print(s)
-# print( sl.calculate(s) )
-
-
+# print(sl.cc(s))

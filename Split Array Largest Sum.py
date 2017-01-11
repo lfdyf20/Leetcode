@@ -5,37 +5,31 @@ class Solution(object):
 		:type m: int
 		:rtype: int
 		"""
-		if m == 1:
-			return sum(nums)
-		if m == len(nums):
-			return max(nums)
-		mean = sum( nums )/m
-		# print(mean)
-		minVal = float( 'inf' )
-		for i in range(len(nums)-1):
-			val = 0
-			for j in range(i+1, len(nums)):
-				if len(nums) - j + i < m-1:
-					# print("not enough")
-					# print( len(nums), j, i, m )
-					break
-				val = sum( nums[i:j] )
-				# print(nums[i:j], val)
-				if val > mean:
-					# print(nums[i:j])
-					minVal = min( val, minVal )
-					break
-		return minVal
-		# minVal = float( 'inf' )
-		# def travel(nums, m, minVal):
-		# 	if m == 1:
-		# 		return sum(nums)
-		# 	for i in range(1, len(nums)-m):
-		# 		print( nums[:i], nums[i:], m )
-		# 		maxVal =  max( sum(nums[:i]), travel(nums[i:], m-1, minVal) )
-		# 		minVal = min( minVal, maxVal )
-		# travel( nums, m, minVal )
-		# return minVal
+		def isValid(mid):
+			count = 0
+			current = 0
+			for n in nums:
+				current += n
+				if current > mid:
+					count += 1
+					if count >= m:
+						return False
+					current = n
+			return True
+
+		l = max(nums)
+		h = sum(nums)
+
+		while l < h:
+			mid = l + (h-l)//2
+			if isValid(mid):
+				print(mid)
+				h = mid
+			else:
+				l = mid + 1
+		return l
+
+
 
 
 nums = [1,2,3,4,5]

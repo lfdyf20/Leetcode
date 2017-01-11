@@ -9,8 +9,6 @@ class Solution(object):
 		if n <= 2:
 			return list(set(nums))
 		l = floor(n/3)
-		print("n: ", n)
-		print("n/3: ", l)
 		res= []
 		nums.sort()
 		i = 0
@@ -24,9 +22,10 @@ class Solution(object):
 
 
 
-nums = [1,1,1,2,2,2,3,3,3,3] 
-nums = [1,2,3,4]
-nums = [1,2,3],1
-nums = [1]
+nums = [1,1,1,2,2,2,3,3,3,3,3,3,3,3,3,3,3,3] 
+# nums = [1,2,3,4]
+# nums = [1,2,3],1
+# nums = [1]
+nums = [8,8,8,8]
 sl = Solution()
 print( sl.majorityElement( nums ) )

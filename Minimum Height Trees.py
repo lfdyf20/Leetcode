@@ -1,4 +1,5 @@
 import collections
+from collections import defaultdict
 class Solution(object):
     def findMinHeightTrees(self, n, edges):
         """
@@ -15,7 +16,7 @@ class Solution(object):
         	distDic[i].add(j)
         	distDic[j].add(i)
         count = 1
-        print( distDic )
+        # print( distDic )
         backDic = distDic.copy()
         while True and count < 1000:
         	count += 1
@@ -30,19 +31,9 @@ class Solution(object):
         		distDic[i] = distDic[i] | nebSet - set( [i] )
        
         	if flag == 1:
-        		print(distDic, count)
+        		# print(distDic, count)
         		return list( res ) 
         	backDic = distDic.copy()
-
-
-        # for i, j in edges:
-        # 	distDic[i][j] = 1
-        # 	distDic[j][i] = 1
-        # print(distDic)
-        # for i, nebs in distDic.items():
-        # 	print(i, neb)
-        # 	for neb in nebs:
-        # 		for  
 
 
 
@@ -52,8 +43,9 @@ edges = [[0, 3], [1, 3], [2, 3], [4, 3], [5, 4]]
 n = 4
 edges = [[1,0],[1,2],[1,3]]
 
-n = 7
-edges = [[0,1],[1,2],[1,3],[2,4],[3,5],[4,6]]
+# n = 7
+# edges = [[0,1],[1,2],[1,3],[2,4],[3,5],[4,6]]
 
 sl = Solution()
 print( sl.findMinHeightTrees( n, edges ) )
+# print( sl.mt(n, edges) )

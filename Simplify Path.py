@@ -16,15 +16,7 @@ class Solution(object):
 				stack.append(token)
 		return '/' + '/'.join(stack)
 		
-		# match1 = re.search("(\/\w*)\/$", path)
-		# if match1:
-		# 	res = match1.group(1)
-		# 	return res
-		# match2 = re.search( "(\/\.\.\.)\/?$", path)
-		# if match2:
-		# 	res = match2.group(1)
-		# 	return res
-		# return "/"
+		
 
 
 

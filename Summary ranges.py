@@ -26,6 +26,12 @@ class Solution(object):
                         result.append(str(nums[i]))
         return result
 
+
+
+
+
+        
+
 solution = Solution()
 list = [0,3]
 print list

@@ -31,6 +31,9 @@ class Solution(object):
 
 
 
+
+
+
 		
 
 
@@ -38,6 +41,8 @@ class Solution(object):
 
 s = 7
 nums = [2,3,1,2,4,3,1,7]
+nums = [2,3,1,2,4,3]
 
 sl = Solution()
 print( sl.minSubArrayLen( s, nums ) )
+# print( sl.msa( s, nums ) )s
