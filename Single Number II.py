@@ -13,6 +13,11 @@ class Solution(object):
         for i in dic.items():
         	if i[1] != 3:
         		return i[0]
+
+
+    def mysolution(self, nums):
+        
+        return nums
         
 
 
@@ -22,3 +27,4 @@ class Solution(object):
 nums = [1,5,1,1,2,3,2,2,3,5,5]
 sample = Solution()
 print( sample.singleNumber( nums ) )
+print( sample.mysolution(nums) )

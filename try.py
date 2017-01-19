@@ -1,5 +1,4 @@
-from collections import Counter
+from collections import Counter, defaultdict
 
-a = [1,2,3,3,4]
 
-print(sorted(set(a), reverse=True)[0])
+print(6//-132)

@@ -9,6 +9,8 @@ class Solution(object):
         s = re.sub( " +"," ",s )
         wordList = s.split(" ")
         return " ".join( wordList[::-1] )
+
+        
         
 
 

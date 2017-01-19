@@ -1,3 +1,4 @@
+# coding: utf-8
 class Solution(object):
     def maxSlidingWindow(self, nums, k):
         """
@@ -13,7 +14,7 @@ class Solution(object):
         	res.append( max(nums[i:i+k]) )
         return res
 
-
+        
 
 
 nums, k = [1,3,-1,-3,5,3,6,7], 3

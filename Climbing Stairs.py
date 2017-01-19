@@ -23,6 +23,12 @@ class Solution(object):
             curr += 1
         return l + r
 
+    def climbStairs2(self, n):
+        rec = [1]+[1]+[0]*(n-1)
+        for i in range(2, n+1):
+            rec[i] = rec[i-1]+rec[i-2]
+        return rec[-1]
+
 
 	
 	
@@ -30,8 +36,8 @@ class Solution(object):
 
 
 
-n = 11
+n = 3
 sample = Solution()
 print( sample.climbStairs(n) )
-print( sample.myCS(n) )
-
+# print( sample.myCS(n) )
+print( sample.climbStairs2(n) )

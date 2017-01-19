@@ -34,6 +34,22 @@ class Solution(object):
         profit += high - low
         return profit
 
+    def mySolution(self, prices):
+        if len(prices) < 2:
+            return 0
+            
+        maxProfit = 0
+        buy = [-prices[0]]
+        sell = [0]
+        
+        for p in prices[1:]:
+            buy.append( max(buy[-1], sell[-1]-p) )
+            sell.append( max(sell[-1], buy[-1]+p) )
+        return max(sell)
+
+    def online(self, prices):
+        return sum(max(prices[i + 1] - prices[i], 0) for i in range(len(prices) - 1))
+
 
 
 
