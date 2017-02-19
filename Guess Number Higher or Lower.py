@@ -39,13 +39,31 @@ class Solution(object):
 			else:
 				print('error')
 				return False
+
+	def mySolution(self, n):
+		"""
+		:type n: int
+		:rtype: int
+		"""
+		l, h = 1, n
+		mid = (l+h)//2
+		r = guess( mid )
+		while r != 0 and l<h:
+			if r == 1:
+				l = mid+1
+			elif r == -1:
+				h = mid-1
+			mid = (l+h)//2
+			r = guess( mid )
+		return mid
 				
 	   
 
-n = 100
+n = 10
 trueVal = pick( n )
 print(trueVal)
 
 sl = Solution()
 print( sl.guessNumber(n) )
+print( sl.mySolution(n) )
 

@@ -11,8 +11,8 @@ class Solution(object):
     def pm(self, nums):
     	def travel(nums, path, res):
     		if nums == []:
-    			if path in res:
-    				return
+    			# if path in res:
+    			# 	return
     			res.append( path )
     			return
     		for i, num in enumerate(nums):
@@ -27,7 +27,7 @@ class Solution(object):
 
 nums = [1,2,3,4,5]
 sl = Solution()
-print( repr(sl.permute( nums )) )
-print( sl.pm(nums) )
+print( len(sl.permute( nums )) )
+print( len(sl.pm(nums) ))
 # print( nums[:0]+nums[1:] )
 # print( repr(list(enumerate(nums))) )

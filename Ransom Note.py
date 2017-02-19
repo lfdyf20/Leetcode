@@ -1,3 +1,4 @@
+from collections import Counter
 class Solution(object):
     def canConstruct(self, ransomNote, magazine):
         """
@@ -21,12 +22,25 @@ class Solution(object):
         return True
 
 
+    def mySolution(self, ransomNote, magazine):
+        m = Counter(magazine)
+        r = Counter(ransomNote)
+        for i in r:
+            if r[i] > m[i]:
+                return False
+        return True
+
+    def online(self, ransomNote, magazine):
+        print(Counter(ransomNote) - Counter(magazine))
+        return not Counter(ransomNote) - Counter(magazine)
 
 
 
 
 
-ransomNote = 'aa'
-magazine = 'ab'
+ransomNote = 'aabc'
+magazine = 'aab'
 sl = Solution()
 print( sl.canConstruct(ransomNote, magazine) )
+print( sl.mySolution(ransomNote, magazine) )
+print( sl.online(ransomNote, magazine) )

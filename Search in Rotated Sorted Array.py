@@ -52,13 +52,34 @@ class Solution(object):
         	return l
         
 
+    def mySolution(self, nums, target):
+        l, h = 0, len(nums)
+        while l<=h:
+            m = (l+h)//2
+            
+            if nums[m] == target:
+                return m
+            
+            if nums[l] <= nums[m]:
+                if nums[l] <= target <= nums[m]:
+                    h = m-1
+                else:
+                    l = m+1
+            else:
+                if nums[m] <= target <= nums[h]:
+                    l = m+1
+                else:
+                    h = m-1
+        return -1
+
 
 
 
 
 nums, target = [3, 4, 5, 6, 7, 0, 1, 2], 0
-nums = [1,2]
+# nums = [1,2]
 
 
 sl = Solution()
 print( sl.search( nums, target ) )
+print( sl.mySolution(nums, target) )
