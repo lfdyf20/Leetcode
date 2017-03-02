@@ -48,6 +48,8 @@ class Solution(object):
 	def generateMatrix2(self, n):  
 	    result = [[0 for i in range(n)] for j in range(n)]
 	    coord = [[(i,j) for j in range(n)] for i in range(n)]
+	    print(result)
+	    print(coord)
 	    
 	    count = 1
 	    
@@ -60,7 +62,22 @@ class Solution(object):
 	    return result
 
 
+	def mySolution(self, n):
+		res = [ [0]*n for _ in range(n) ]
+		i, j, di, dj = 0, 0, 0, 1
+		for num in range(1, n**2+1):
+			res[i][j] = num
+			if res[(i+di)%n][(j+dj)%n]:
+				di, dj = dj, -di
+			i += di
+			j += dj
+		return res
+
+
+
 n = 5
 sl = Solution()
 res = sl.generateMatrix(n)
+print(np.matrix(res))
+res = sl.mySolution(n)
 print(np.matrix(res))

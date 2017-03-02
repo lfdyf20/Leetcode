@@ -37,9 +37,34 @@ class Solution(object):
         if res <= -2147483648:
             return -2147483648
         return res
-        
+
+    def mySolution(self, str):
+        try:
+            while str[0] == " ":
+                str = str[1:]
+        except:
+            return 0
+        isPos = 1
+        res = ""
+        for i in str:
+            if res == "" and i in "+-":
+                res += i
+                continue
+            if i in "1234567890":               
+                res +=  i
+            else:
+                break
+        if (len(res)== 1 and res in "+-") or not res:
+            return 0
+        integer = int(res)
+        return min(max(integer,-2147483648), 2147483647)
 
 
-str = "1"
+
+
+
+
+str = "abc"
 sample = Solution()
 print(sample.myAtoi(str))
+print( sample.mySolution(str) )

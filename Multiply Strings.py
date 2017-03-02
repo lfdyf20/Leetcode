@@ -11,6 +11,7 @@ class Solution(object):
         		res[i+j] += int(e1) * int(e2)
         		res[i+j+1] += res[i+j] // 10
         		res[i+j] = res[i+j] % 10
+        print(res)
         while len(res) > 1 and res[-1] == 0:
         	res.pop()
         return "".join(map(str, res[::-1])) if len(res) > 0 else '0'
@@ -18,7 +19,9 @@ class Solution(object):
 
 
 
-num1, num2 = "14", "11"
+
+
+num1, num2 = "1", "1"
 
 sl = Solution()
 print( sl.multiply( num1, num2 ) )

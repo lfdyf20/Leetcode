@@ -1,26 +1,17 @@
 from collections import Counter, defaultdict, deque
 from itertools import combinations
+import numpy as np
+import time
+import sys
 
-a = {1:2, 3:4}
-b = {1:5, 4:2}
+a = "12345"
+print(~0)
 
-class one(object):
-	"""docstring for one"""
-	def hello(self):
-		self.a = 1
-		def w():
-			self.a += 1
-		w()
-		print(self.a)
+a, b = 1, 2
+a,b = a+b, a+b
+print(a, b)
 
+a = [[1,2],[3,4]]
+b = list(zip(*a))
+print(b)
 
-one = one()
-print( one.hello() )
-
-a = 0 if 1 else 4
-print(a)
-
-a = 1
-a += 1 if 1 else 2
-print(a)
-		

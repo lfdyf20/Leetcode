@@ -14,6 +14,7 @@ matchSL = re.search("sl.=.Solution", content)
 if matchSL == None:
 	funcName = match.group(1)
 	varName = match.group(2)
+	content
 	contentToAdd = "\n\n\n\n"
 	contentToAdd += varName + " = \n\n"
 	contentToAdd += "sl = Solution()\n"

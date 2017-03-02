@@ -33,7 +33,7 @@ class Solution(object):
                 return False
             maxlen = max( maxlen, ind + num )
         else:
-            return True
+            return Truer
 
 
 nums = [3,8,1,0,0,0,0,2]
