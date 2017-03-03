@@ -15,6 +15,19 @@ class Solution(object):
 			else:
 				stack.append(token)
 		return '/' + '/'.join(stack)
+
+
+	def mySolution(self, path):
+		stack = []
+		for i in path.split('/'):
+			if i in ['', '.']:
+				pass
+			elif i == '..':
+				if stack:
+					stack.pop()
+			else:
+				stack.append( i )
+		return '/'+'/'.join( stack )
 		
 		
 
@@ -31,3 +44,4 @@ path = "/abc/..."
 
 sl = Solution()
 print( sl.simplifyPath( path ) )
+print( sl.mySolution(path) )

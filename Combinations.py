@@ -1,3 +1,4 @@
+from itertools import combinations
 class Solution(object):
     def combine(self, n, k):
         """
@@ -32,12 +33,23 @@ class Solution(object):
         travel( k, nums, [], res )
         return res
 
+    def mySolution(self, n, k):
+        a = list( combinations(range(1,n+1),k) )
+        print(a)
+
+    def mySolution2( self, n, k ):
+        if k==0:
+            return [[]]
+        return [pre+[i] for pre in range()]
+            
+
 
 
 
 
 n, k = 4, 2
-n, k = 1, 0
+# n, k = 1, 0
 sl = Solution()
 print( sl.combine(n, k) )
 print( sl.cb(n, k) )
+print( sl.mySolution(n, k) )

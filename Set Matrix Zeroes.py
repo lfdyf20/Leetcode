@@ -41,6 +41,21 @@ class Solution(object):
             if matrix[rowInd][j] != 0 and matrix[rowInd][j] != '*':
                 matrix[rowInd][j] = '*'
 
+
+    def mySolution(self, matrix):
+        for i in range(len(matrix)):
+            for j in range(len(matrix[0])):
+                if matrix[i][j] == 0:
+                    matrix[i][0] = matrix[0][j] = 0
+        for i in range(len(matrix)):
+            if matrix[i][0] == 0:
+                for j in range( len(matrix[0]) ):
+                    matrix[i][j] = 0
+        for j in range(len(matrix[0])):
+            if matrix[0][j] == 0:
+                for i in range( len(matrix) ):
+                    matrix[i][j] = 0
+
         
 
 
@@ -59,10 +74,16 @@ matrix = [
 	[3,4,5,1],
 	[3,1,2,0]
 ]
+matrix = [[0,0,0,5],[4,3,1,4],[0,1,1,4],[1,2,1,3],[0,0,1,1]]
+
+print(np.array(matrix))
 # matrix = [[0]]
 sl = Solution()
 # print( sl.setZeroes( matrix ) )
 # print(np.matrix(matrix))
 
-sl.sz(matrix)
+# sl.sz(matrix)
+# print(np.array(matrix))
+
+sl.mySolution(matrix)
 print(np.array(matrix))

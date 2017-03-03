@@ -5,6 +5,8 @@ class Solution(object):
 		:type target: int
 		:rtype: bool
 		"""
+		if not matrix or not matrix[0]:
+		    return False
 		for i in range(len(matrix)):
 			if matrix[i][0] > target:
 				for j in range( len(matrix[0]) ):

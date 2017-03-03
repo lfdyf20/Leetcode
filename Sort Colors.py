@@ -13,6 +13,8 @@ class Solution(object):
         		nums.pop(i)
         		nums.append(2)
 
+    
+
 
 
 

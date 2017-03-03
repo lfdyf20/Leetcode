@@ -19,24 +19,6 @@ class Solution(object):
         			dp[i][j] = min(grid[i-1][j], grid[i][j-1])+grid[i][j]
         return dp[-1][-1]
 
-
-        # if len(grid) == 1:
-        # 	return sum( grid[0] )
-        # isCol = True
-
-        # sumVal = 0
-        # for i in grid:
-        # 	sumVal += i[0]
-        # 	if len(i) != 1:
-        # 		isCol = False
-        # if isCol == True:
-        # 	return sumVal
-       
-
-        # orgin = grid[0][0]
-        # g1 = grid[1:]
-        # g2 = list( map(lambda x:x[1:], grid))
-        # gridSum = orgin + min( self.minPathSum(g1), self.minPathSum(g2) )
     def mp( self, grid ):
         m, n = len(grid), len(grid[0])
         rec = [[-1 for _ in range(n)] for _ in range(m) ] 
@@ -59,6 +41,18 @@ class Solution(object):
 
         travel(grid, 0, 0, m-1, n-1, rec)
         return rec[0][0]
+
+    def mySolution(self, grid):
+        m, n = len(grid), len(grid[0])
+        for i in range( len(grid) ):
+            for j in range( len(grid[0]) ):
+                if i == 0 and j == 0:
+                    continue
+                if i == 0 or j == 0:
+                    grid[i][j] += [ grid[i-1][j], grid[i][j-1] ][ i==0 ]
+                else:
+                    grid[i][j] += min( grid[i-1][j], grid[i][j-1] )
+        return grid[-1][-1]
 
 
 

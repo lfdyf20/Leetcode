@@ -23,7 +23,7 @@ class Solution(object):
 
 
 
-m, n = 3, 2
+m, n = 7, 3
 
 
 sl = Solution()
