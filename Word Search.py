@@ -30,30 +30,6 @@ class Solution(object):
 
 
 
-		
-
-
-
-		# def isAround(i, j, ele):
-		# 	res = []
-		# 	for ii in [max(0,i-1), min(maxi,i+1) ]:
-		# 		if ii == i:
-		# 			continue
-		# 		else:
-		# 			if board[ii][j] == ele:
-		# 				res.append( (i,j) )
-		# 	for jj in [max(0,j-1), min(maxj, j+1)]:
-		# 		if jj == j:
-		# 			continue
-		# 		else:
-		# 			if board[i][jj] == ele:
-		# 				res.append( (i,j) )
-		# 	return res
-
-		# print(board[1][1])
-		# return isAround(1,1,'S')
-
-
 
 
 board = [

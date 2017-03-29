@@ -1,4 +1,7 @@
+from tryFunc import timer
+
 class Solution(object):
+    
     def online_integerBreak(self, n):
     	"""
     	
@@ -44,6 +47,7 @@ class Solution(object):
         	l, u = n/2-1 , n/2+1
         	m = n/2
         	return int(max( m*m, self.integerBreak(m)**2, l*u, self.integerBreak(l)*u, l*self.integerBreak(u) , self.integerBreak(l)*self.integerBreak(u) ))
+
 
     def isOdd(self, n):
     	"""

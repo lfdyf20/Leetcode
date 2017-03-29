@@ -11,9 +11,20 @@ class Solution(object):
         		temp.append(j+[i])
         	subset = subset + temp
         return subset
+
+    def mySolution( self, nums ):
+        res = [[]]
+        for i in nums:
+            temp = []
+            for ss in res:
+                temp += [ ss+[i] ]
+            res = res + temp
+        return res
+
         
 
 
 nums = [1,2,3]
 sl =Solution()
 print( sl.subsets(nums) )
+print( sl.mySolution(nums) )

@@ -1,30 +1,30 @@
 class Solution(object):
-    def removeDuplicates(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: int
-        """
-        for i in range(  len( nums )-1, 0, -1 ):
-        	if nums[i] == nums[i-1]:
-        		nums.pop(i)
-        return len(nums)
+	def removeDuplicates(self, nums):
+		"""
+		:type nums: List[int]
+		:rtype: int
+		"""
+		res = len(nums)
+		for i in range(  len( nums )-1, 0, -1 ):
+			if nums[i] == nums[i-1]:
+				nums.append( nums.pop(i) )
+				res -= 1
+		return res
 
-# class Solution(object):
-#     def removeDuplicates(self, nums):
-#     	"""
-#     	online: speed
-#     	"""
-#         i=1
-#         j=1
-#         a=len(nums)
-#         while i<a:
-#             if nums[i]>nums[i-1]:
-#                 nums[j]=nums[i]
-#                 j+=1
-#             i+=1
-#         return len(set(nums))
 
-nums = [1,1,2]
+	def mySolution(self, nums):
+		res = len(nums)
+		for i in range(1,len(nums)):
+			if nums[~i] == nums[~(i-1)]:
+				nums.append( nums.pop(~i) )
+				res -= 1
+		return resj
+
+
+nums1 = [1,1]
+nums2 = [1,1]
 sample = Solution()
-print(sample.removeDuplicates( nums ))
-print(nums)
+print(sample.removeDuplicates( nums1 ))
+print(sample.mySolution(nums2))
+print(nums1)
+print(nums2)

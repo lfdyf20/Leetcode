@@ -1,4 +1,7 @@
+from tryFunc import timer
+
 class Solution(object):
+    @timer
     def isSubsequence(self, s, t):
         """
         :type s: str
@@ -14,18 +17,12 @@ class Solution(object):
                 return False
         return True
 
-
+    @timer
     def issub( self, s, t):
 
         t = iter(t)
         return all(c in t for c in s)
 
-        # a = [1,2,3,4,5]
-        # b = iter(a)
-        # print 1 in b #True
-        # print b.next() #2
-        # print 1 in b #False
-        # print b.next() #StopIteration
 
 
 

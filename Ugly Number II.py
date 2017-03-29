@@ -1,5 +1,7 @@
 from heapq import *
+from tryFunc import timer
 class Solution(object):
+    @timer
     def nthUglyNumber(self, n):
         """
         :type n: int
@@ -18,6 +20,7 @@ class Solution(object):
         		i += 1
         return e
 
+    @timer
     def nthUglyNumber2(self, n):
         """
         :type n: int
@@ -33,8 +36,28 @@ class Solution(object):
         return uglies[-1]
 
 
+    @timer
+    def mySolution(self, n):
+        if n <= 5:
+            return [1,2,3,4,5][n-1]
+        m = 5
+        rec = set( [1,2,3,4,5] )
+        num = 6
+        while True and num < 100000:
+            for i in [2,3,5]:
+                if num % i == 0 and num//i in rec:
+                    m += 1
+                    rec.add( num )
+                    if m==n:
+                        return num
+                    break
+            num += 1
 
 
-n=10
+
+
+n=1000
 sl=Solution()
 print( sl.nthUglyNumber(n) )
+print( sl.nthUglyNumber2(n) )
+print( sl.mySolution(n) )

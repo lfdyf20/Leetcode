@@ -21,6 +21,7 @@ class Solution(object):
 
 
 
+
 		# def travel(s):
 		# 	print(s)
 		# 	if s == "":

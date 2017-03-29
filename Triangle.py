@@ -1,3 +1,4 @@
+import numpy as np
 class Solution(object):
     def minimumTotal(self, triangle):
         """
@@ -41,20 +42,29 @@ class Solution(object):
         print( triangle )
         return triangle[-1][0]
         
-
+    def mysolution(self, triangle):
+        for i in range(len(triangle)):
+            for j in range(len(triangle[i])):
+                if i==0:    continue
+                left = triangle[i-1][j-1] if j-1>=0 else float('inf')
+                right = triangle[i-1][j] if j<=i-1 else float('inf')
+                triangle[i][j] += min(left,right)
+        print(np.matrix(triangle))
+        return min(triangle[-1])
 
 triangle = [
-     [2],
+    [2],
     [3,4],
-   [6,5,7],
-  [4,1,8,3]
+    [6,5,7],
+    [4,1,8,3]
 ]
 
-triangle = [[]]
+# triangle = [[]]
 
 sl = Solution()
 # print( sl.minimumTotal(triangle) )
-print( sl.mt(triangle) )
+# print( sl.mt(triangle) )
+print( sl.mysolution(triangle) )
 
 
 
