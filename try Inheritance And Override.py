@@ -22,8 +22,11 @@ class Student(Human):
 	def showInfo(self, **kw):
 		super().showInfo()
 		print("score: ",self.__score)
+
+	def validate(self):
+		print("[Validation] This is a student")
+
 	
-		
 
 
 
@@ -35,3 +38,5 @@ jack.showInfo()
 
 hello = Student("hello", gender="female", age=18, score=87)
 hello.showInfo()
+
+hello.validate()

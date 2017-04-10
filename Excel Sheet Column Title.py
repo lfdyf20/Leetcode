@@ -12,23 +12,32 @@ class Solution(object):
             n = (n-1) // 26
         res = rec[n-1] + res
         return res
-    #     res = ''
-    #     base = ord('A')
-    #     while n:
-    #         n, r = divmod(n - 1, 26)
-    #         res = '{}{}'.format(chr(base + r), res)
-    #     return res
+    
+    def mySolution(self, n):
+        res = ""
+        while n>0:
+            base = n%26
+            if base == 0:
+                res = 'Z' + res
+                n = (n-1)//26
+            else:
+                res = chr(base+64) + res
+                n = n//26
+        return res
 
-    # def convertToTitle2(self, n):
-    #     base = ord('A')
-    #     n, r = divmod(n-1, 26)
-    #     res = chr(base+r)
-    #     print n, r, res
-    #     return res
+    def online(self, n):
+        res = ""
+        while n>0:
+            n -= 1
+            res = chr(n%26+65) + res
+            n //= 26
+        return res
 
 
 
-n = 28
+
+n = 287979
 sample = Solution()
 print(sample.convertToTitle(n))
-# print sample.convertToTitle2(n)
+print( sample.mySolution(n) )
+print( sample.online(n) )

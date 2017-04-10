@@ -29,6 +29,28 @@ class Solution(object):
         return res if len(res) == numCourses else []
 
 
+    def mysolution(self, numCourses, prerequisites):
+        csDic = {i: set() for i in range(numCourses)}
+        preDic = collections.defaultdict(set)
+        for cs, pre in prerequisites:
+            csDic[cs].add(pre)
+            preDic[pre].add(cs)
+
+        learned = collections.deque( [cs for cs in csDic if not csDic[cs]] )
+
+        count, res = 0, []
+        while learned:
+            learnedCs = learned.popleft()
+            res.append( learnedCs )
+            count += 1
+            for cs in preDic[learnedCs]:
+                csDic[cs].remove(learnedCs)
+                if not csDic[cs]:
+                    learnedCs.append(cs)
+
+        return res if len(res)==numCourses else []
+
+
 
 
 

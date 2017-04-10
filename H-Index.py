@@ -5,7 +5,7 @@ class Solution(object):
         :rtype: int
         """
         citations.sort(reverse = True)
-        # print(citations)
+        print(citations)
         res = 0
         for i in range(len(citations)):
         	if citations[i] >= i+1:
@@ -28,10 +28,10 @@ class Solution(object):
 
 
 citations = [3,0,6,1,5,7,9,0,1,3,43,2,3]
-citations = [2,1]
-citations = [3, 0, 6, 1, 5]
-citations = [100]
+# citations = [2,1]
+# citations = [3, 0, 6, 1, 5]
+# citations = [100]
 
 sl = Solution()
-# print( sl.hIndex( citations ) )
+print( sl.hIndex( citations ) )
 print( sl.h(citations) )
