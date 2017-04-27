@@ -5,21 +5,21 @@ import time
 import sys
 import random
 from math import sqrt
+from numpy.linalg import inv
+import re
+from datetime import datetime
 
 
+class Man:
+	a = []
+	def hello(self):
+		self.a.append(1)
+		print('hello')
+		print(self.a)
 
-a = {1:2,5:6}
-print( a.setdefault(3,2) )
-print( a.get(4,0) )
-print(a)
+l = Man()
+l.hello()
 
-
-matrix = [
-	[1,0,1,0,0],
-	[1,0,1,1,1],
-	[1,1,1,1,1],
-	[1,0,0,1,0]
-]
-
-print( matrix[0] )
-print( list(zip(*matrix))[0] )
+print(int(sqrt(8)))
+print(8**0.5)
+		

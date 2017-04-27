@@ -151,13 +151,13 @@ beginWord = "hit"
 endWord = "coa"
 wordList = ["hot","dot","dog","lot","log", "tbc", "cig", "cit", "cia", "hta", "hoa"]
 
-beginWord = "hit"
-endWord = "cog"
-wordList = ["hot","dot","dog","lot","log","cog"]
+# beginWord = "hit"
+# endWord = "cog"
+# wordList = ["hot","dot","dog","lot","log","cog"]
 
-beginWord = "hit"
-endWord = "hot"
-wordList = ["hot","dot","dog","lot","log","cog"]
+# beginWord = "hit"
+# endWord = "hot"
+# wordList = ["hot","dot","dog","lot","log","cog"]
 
 sl = Solution()
 
