@@ -13,15 +13,30 @@ class Solution(object):
 		else:
 			return False
 
+	def other(self, num):
+		if num == 1: return True
+		if num == 2: return False
+		key = bin(num)[2:][::-1]
+		if key.count('1') > 1:
+			return False
+		try:
+			index = key.index('1')
+		except:
+			return False
+		else:
+			return index%2==0
+
+	def isPowerOfFour(self, num):
+		return num != 0 and num &(num-1) == 0 and num & 1431655765== num
+
+
+
 
 
 num = 16
 sl = Solution()
-print( sl.isPowerOfFour(num) )
+for num in [0,1,2,3,4,6,8,16,45, 64]:
+	print( num, sl.isPowerOfFour(num) )
+	print( num, sl.other(num) )
 
-a = [[1,1,9,9],[4,5,6,3],[3,2,1,4],[5,3,7,3]]
-
-for i in [0,2]:
-	for j in [0,2]:
-		print(i,j)
 		
