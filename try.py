@@ -1,3 +1,4 @@
+# coding: utf-8
 from collections import Counter, defaultdict, deque
 from itertools import combinations
 import numpy as np
@@ -28,3 +29,7 @@ b = a[::-1]
 a.pop()
 print(b)
 
+a = "你好ま"
+print(a)
+a = "a	安	あ"
+print(a)
