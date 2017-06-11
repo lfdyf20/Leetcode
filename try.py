@@ -9,27 +9,16 @@ from math import sqrt
 from numpy.linalg import inv
 import re
 from datetime import datetime
+from LinkedList import LinkedList
 
 
-class Man:
-	a = 0
-	def hello(self):
-		self.a += 1
-		print(self.a)
-
-l = Man()
-l.hello()
-
-print(int(sqrt(8)))
-print(8**0.5)
-		
-
-a = [1,2,3]
-b = a[::-1]
-a.pop()
-print(b)
-
-a = "你好ま"
+a = LinkedList([1,2,3,4,5])
+a.printLinkedList()
+# b = a.reverse()
+# a.reverseBetween(1,5)
+a.removeAt(1)
+a.printLinkedList()
+a = [1]
+a += [a[0]*1]
 print(a)
-a = "a	安	あ"
-print(a)
+

@@ -29,6 +29,13 @@ class Solution(object):
 		12 = 3 + 3 + 3 + 3 = 81
 		"""
 
+    def dpSolution(self, n):
+        dp = [0,0,1]
+        for i in range(3,n+1):
+            dp += [max(3*max(dp[i-3],i-3), 2*max(dp[i-2],i-2), 1*max(dp[i-1],i-1))]
+        return dp[n]
+
+
     def integerBreak(self, n):
         """
         :type n: int
@@ -61,8 +68,6 @@ class Solution(object):
     		return False
 
 
-
-
     def ib(self, n):
         if n < 4:
             return n-1
@@ -82,9 +87,9 @@ class Solution(object):
 
 
 
-n = 6
+n = 200
 sample = Solution()
-print( sample.online_integerBreak(n) )
-print( sample.integerBreak(n) )
-print( sample.ib(n) )
-# print(7%2)
+print( "online: ",sample.online_integerBreak(n) )
+print( "integer break ",sample.integerBreak(n) )
+print( "ib: ",sample.ib(n) )
+print( "dp: ",sample.dpSolution(n) )

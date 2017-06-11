@@ -25,7 +25,7 @@ class Solution(object):
 
 
 
-from generateLinkedList import LinkedList
+from LinkedList import LinkedList
 
 vals = [6,1,3,6,6,4,6,7,6,6]
 vals = [1]
