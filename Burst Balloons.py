@@ -1,3 +1,4 @@
+import numpy as np
 class Solution(object):
     def maxCoins(self, nums):
         """

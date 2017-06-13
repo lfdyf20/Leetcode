@@ -1,3 +1,4 @@
+import numpy as np
 class NumMatrix(object):
     def __init__(self, matrix):
         """
@@ -12,9 +13,11 @@ class NumMatrix(object):
             for i in range(m):
                 for j in range(1,n):
                     self.sumM[i][j] = self.sumM[i][j-1] + matrix[i][j]
+            print(np.array(self.sumM))
             for j in range(n):
                 for i in range(1,m):
                     self.sumM[i][j] = self.sumM[i-1][j] + self.sumM[i][j]
+        print(np.array(self.sumM))
         
 
     def sumRegion(self, row1, col1, row2, col2):
@@ -49,3 +52,4 @@ matrix = [
 
 sl = NumMatrix(matrix)
 print( sl.sumRegion(2, 1, 4, 3) )
+

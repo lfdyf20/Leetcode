@@ -22,3 +22,6 @@ a = [1]
 a += [a[0]*1]
 print(a)
 
+a = "123"
+print(a[1:3])
+print( a.startswith("12") )

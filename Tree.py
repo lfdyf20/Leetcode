@@ -60,8 +60,9 @@ class BinaryTree(object):
 				stack += [ node.left, node.right ]
 		return res[::-1]
 
-	def drawtree(self):
-		root = self.root
+	def drawTree(self, root=None):
+		if root == None:
+			root = self.root
 		def height(root):
 			return 1 + max(height(root.left), height(root.right)) if root else -1
 		
