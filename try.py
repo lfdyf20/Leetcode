@@ -12,16 +12,16 @@ from datetime import datetime
 from LinkedList import LinkedList
 
 
-a = LinkedList([1,2,3,4,5])
-a.printLinkedList()
-# b = a.reverse()
-# a.reverseBetween(1,5)
-a.removeAt(1)
-a.printLinkedList()
-a = [1]
-a += [a[0]*1]
+def f(a, b):
+	def g():
+		print(a)
+	g()
+
+f(1,2)
+
+print(1==True)
+
+a = 1 if 0 else 2
 print(a)
 
-a = "123"
-print(a[1:3])
-print( a.startswith("12") )
+import statsmodels.formula.api as sm
