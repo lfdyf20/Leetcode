@@ -13,6 +13,25 @@ class Solution(object):
 		print(numpy.array(need))
 		return need[1][n]
 
+	def online(self, n):
+		def dfs( start, end):
+			if start >= end:
+				return 0
+
+			if start + 1 == end:
+				return start
+
+			if record[start][end] is None:
+				record[start][end] = min(
+					i + max(dfs(start, i - 1), dfs(i + 1, end))
+					for i in range(start, end + 1)
+				)
+
+			return record[start][end]
+
+		record = [[None] * (n + 1) for _ in range(n + 1)]
+		return dfs(1, n)
+
 
 
 
@@ -20,3 +39,4 @@ class Solution(object):
 n = 5
 sl = Solution()
 print( sl.getMoneyAmount(n) )
+print( sl.online(n) )
