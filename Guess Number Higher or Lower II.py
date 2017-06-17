@@ -40,3 +40,22 @@ n = 5
 sl = Solution()
 print( sl.getMoneyAmount(n) )
 print( sl.online(n) )
+
+
+class Solution(object):
+	def getMoneyAmount(self, n):s
+		"""
+		:type n: int
+		:rtype: int
+		""" 
+		record = [ [None]*(n+1) for _ in range(n+1)]
+		def dp(start, end):
+			if start >= end:
+				return 0
+			if start == end + 2:
+				return start
+			if dp[start][end] is None:
+				dp[start][end] = min(
+					i + max(dp(start, i-1), dp(i+1, end)) for i in range(start,end+1))
+			return record[start][end]
+		return dp(1, n)
