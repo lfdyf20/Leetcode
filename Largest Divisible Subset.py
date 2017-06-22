@@ -28,6 +28,6 @@ class Solution(object):
         # return max(comb, key = len)
 
 
-nums = [3,4,16,8]
+nums = [3,4,12,16,8]
 sl = Solution()
 print( sl.largestDivisibleSubset(nums) )

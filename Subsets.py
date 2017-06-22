@@ -15,10 +15,7 @@ class Solution(object):
     def mySolution( self, nums ):
         res = [[]]
         for i in nums:
-            temp = []
-            for ss in res:
-                temp += [ ss+[i] ]
-            res = res + temp
+            res += [ pre + [i] for pre in res ]
         return res
 
         

@@ -18,6 +18,8 @@ class Solution(object):
 			curr = s[:i+1]
 			if curr == curr[::-1]:
 				self.travel(s[i+1:], path+[curr], res)
+
+
 	
 
 

@@ -22,4 +22,5 @@ class Solution(object):
 
 sl = Solution()
 nums = [1,7,4,9,2,5]
+nums = []
 print( sl.wiggleMaxLength(nums) )

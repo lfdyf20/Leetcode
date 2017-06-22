@@ -42,7 +42,7 @@ class Solution(object):
         print( triangle )
         return triangle[-1][0]
         
-    def mysolution(self, triangle):
+    def mysolutionTD(self, triangle):
         for i in range(len(triangle)):
             for j in range(len(triangle[i])):
                 if i==0:    continue
@@ -51,6 +51,15 @@ class Solution(object):
                 triangle[i][j] += min(left,right)
         print(np.matrix(triangle))
         return min(triangle[-1])
+
+    def mysolutionBU(self, triangle):
+        for i in range(len(triangle)):
+            for j in range(len(triangle[~i])):
+                if i == 0: continue
+                triangle[~i][j] += min( triangle[~i+1][j],  
+                                        triangle[~i+1][j+1])
+        print(np.array(triangle))
+        return triangle[0][0]
 
 triangle = [
     [2],
@@ -64,9 +73,16 @@ triangle = [
 sl = Solution()
 # print( sl.minimumTotal(triangle) )
 # print( sl.mt(triangle) )
-print( sl.mysolution(triangle) )
+print( sl.mysolutionTD(triangle) )
 
+triangle = [
+    [2],
+    [3,4],
+    [6,5,7],
+    [4,1,8,3]
+]
 
+print( sl.mysolutionBU(triangle) )
 
 
 
