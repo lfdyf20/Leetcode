@@ -23,6 +23,11 @@ class BinaryTree(object):
 				if kids: node.left  = kids.pop()
 				if kids: node.right = kids.pop()
 
+	def __str__(self):
+		self.drawTree()
+		return self.preorderTravesal()
+
+
 	def getTreeRoot(self):
 		return self.root
 

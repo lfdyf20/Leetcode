@@ -28,3 +28,20 @@ def dfs(nums, index, path, res):
 
 nums = [1,2,2,3]
 print( subsetsWithDup(nums))
+
+
+a = {"123": 123,
+	 "222": 233}
+print(a)
+
+print(int('-5'))
+
+a = [1,2,3,4,5]
+print(all(x<4 for x in a))
+
+print(int(11.9))
+
+a = 123
+b = 222
+a, b = b, a
+print(a, b)
