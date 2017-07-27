@@ -25,10 +25,14 @@ class BinaryTree(object):
 
 	def __str__(self):
 		self.drawTree()
-		return self.preorderTravesal()
+		self.preorderTravesal()
+		return "".join(str(i) for i in self.preorderTravesal())
 
 
-	def getTreeRoot(self):
+	def getRoot(self):
+		"""
+		get tree root
+		"""
 		return self.root
 
 	def inorderTravesal(self):

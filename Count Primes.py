@@ -14,25 +14,6 @@ class Solution(object):
 		print(primes)
 		return sum(primes)
 
-		# if n == 0:
-		# 	return 0
-		# if n<=3:
-		# 	return n-2
-		# count = 2
-		# prime = [2,3]
-		# for i in range(4, n):
-		# 	print(prime)
-		# 	isPrime = True
-		# 	for j in prime:
-		# 		if i % j == 0:
-		# 			isPrime = False
-		# 			break
-		# 	if isPrime:
-		# 		prime.append(i)
-		# 		count += 1 
-		# print(prime)
-		# return count
-
 		
 
 

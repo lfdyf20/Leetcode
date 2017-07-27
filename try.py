@@ -26,22 +26,9 @@ def dfs(nums, index, path, res):
             continue
         dfs(nums, i+1, path+[nums[i]], res)
 
-nums = [1,2,2,3]
-print( subsetsWithDup(nums))
 
-
-a = {"123": 123,
-	 "222": 233}
-print(a)
-
-print(int('-5'))
-
-a = [1,2,3,4,5]
-print(all(x<4 for x in a))
-
-print(int(11.9))
-
-a = 123
-b = 222
-a, b = b, a
-print(a, b)
+a = ["root/a 1.txt(abcd) 2.txt(efgh)", "root/c 3.txt(abcd)", "root/c/d 4.txt(efgh)", "root 4.txt(efgh)"]
+for string in a:
+    match = re.search(r"(?P<path>.*) (?P<name>.*)(?:\(.*\))", string)
+    filepath, filename = match.group('path','name')
+    print(filename, filepath)
