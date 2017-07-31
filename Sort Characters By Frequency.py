@@ -8,10 +8,13 @@ class Solution(object):
         return "".join([char * times for char, times in Counter(s).most_common()])
        
 
-
+    def my(self, s):
+    	return "".join(sorted(s, key=lambda x: (-s.count(x),x)))
 
 
 s = "Aabb"
+s = "loveleetcode"
 
 sl = Solution()
 print( sl.frequencySort( s ) )
+print( sl.my(s) )

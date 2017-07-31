@@ -27,8 +27,18 @@ def dfs(nums, index, path, res):
         dfs(nums, i+1, path+[nums[i]], res)
 
 
-a = ["root/a 1.txt(abcd) 2.txt(efgh)", "root/c 3.txt(abcd)", "root/c/d 4.txt(efgh)", "root 4.txt(efgh)"]
-for string in a:
-    match = re.search(r"(?P<path>.*) (?P<name>.*)(?:\(.*\))", string)
-    filepath, filename = match.group('path','name')
-    print(filename, filepath)
+
+from DecoratorHelper import timer
+
+@timer
+def aaa():
+    print("aaa")
+
+aaa()
+
+a = sorted(["cata", "bat", "rat"],key=len)
+print(a)
+
+a = {"1":2}
+print(a.setdefault("2",3))
+print(a)
