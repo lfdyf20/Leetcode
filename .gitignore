@@ -4,4 +4,5 @@ __pycache__/
 *.swo
 *.html
 *.pyc
+try.py
 
