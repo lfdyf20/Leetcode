@@ -6,7 +6,7 @@ class Solution(object):
         :type k: int
         :rtype: int
         """
-        res = lo = 0
+        hi = lo = 0
         counts = Counter()
         for hi in range(1, len(s)+1):
         	counts[ s[hi-1] ] += 1
@@ -19,6 +19,7 @@ class Solution(object):
 
 
 s = "AABABBA"
+s = ""
 k = 1
 
 sl = Solution()
