@@ -20,38 +20,6 @@ class Solution(object):
 					record[i][j] = record[i][k] * record[k][j]
 		# print(record)
 		return [record[num].get(den, -1.0) for num, den in queries]
-		# return [record[num][den] for num, den in queries]
-		# dic = {}
-		# for i, j in zip(equations, values):
-		# 	# print("".join(i), j)
-		# 	key = "".join(i)
-		# 	dic[ key ] = j
-		# 	dic[ key[::-1] ] = 1/j
-		# keyList = dic.keys()
-		# for i,j in itertools.combinations(keyList, 2):
-		# 	if i[-1] == j[0]:
-		# 		# if i[0] == j[-1]:
-		# 		# 	continue
-		# 		key = i[0] + j[-1]
-		# 		if key in dic:
-		# 			pass
-		# 		else:
-		# 			dic[key] = dic[i]* dic[j]
-		# 			dic[key[::-1]] = 1/dic[key]
-		# # print(dic)
-		# res = []
-		# for i,j in queries:
-			
-		# 	key = i+j
-		# 	if key in dic:
-		# 		res.append( dic[key] )
-		# 	else:
-		# 		res.append( -1.0 )
-		# 	# print(i,j,res)
-		# return res
-
-
-
 
 
 

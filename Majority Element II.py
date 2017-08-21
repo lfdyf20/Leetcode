@@ -5,20 +5,30 @@ class Solution(object):
 		:type nums: List[int]
 		:rtype: List[int]
 		"""
-		n = len(nums)
-		if n <= 2:
-			return list(set(nums))
-		l = floor(n/3)
-		res= []
-		nums.sort()
-		i = 0
-		while i + l < n:
-			if nums[i] == nums[i+l]:
-				res += [nums[i]]
-				print(res)
-				i = i+l
-			i = i + 1
+		f, s = 0, 1
+		fc = sc = 0
+		for num in nums:
+			if num == f:
+				fc += 1
+			elif num == s:
+				sc += 1
+			elif fc == 0:
+				f, fc = num, 1
+			elif sc == 0:
+				s, sc = num, 1
+			else:
+				fc -= 1
+				sc -= 1
+
+		fl = sum(1 for num in nums if num == f)
+		sl = sum(1 for num in nums if num == s)
+		res = []
+		if fl > len(nums)//3:
+			res += [f]
+		if sl > len(nums)//3:
+			res += [s]
 		return res
+
 
 
 

@@ -22,7 +22,7 @@ class Solution(object):
 #               num += ch
 #             elif ch == '[':
 #                 stack.append(["", int(num)])
-#                 num = ""
+#                 num = "" 
 #             elif ch == ']':
 #                 st, k = stack.pop()
 #                 stack[-1][0] += st*k

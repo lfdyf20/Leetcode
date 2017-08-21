@@ -4,24 +4,21 @@ class Interval(object):
         self.start = s
         self.end = e
 
+from bisect import bisect
 class Solution(object):
     def findRightInterval(self, intervals):
         """
         :type intervals: List[Interval]
         :rtype: List[int]
         """
-        dic = defaultdict(lambda: -1)
-        for ind, interval in enumerate(intervals):
-        	dic[ interval.start ] = ind
-        print(dic)
-        res = []
-        for i in intervals:
-        	res.append( dic[ i.end ] )
-        return res
+        starts = sorted([ I.start, ind ] for ind, I in enumerate(intervals)) + [[float('inf'), -1]]
+        return [starts[bisect(starts, [I.end])][-1] for I in intervals]
 
 
 
 x = [ [1,2] ]
+x = [ [3,4], [2,3], [1,2] ]
+x = [ [0,1], [2,3], [3,4] ]
 intervals = []
 for i,j in x:
 	intervals.append( Interval(i,j) )
