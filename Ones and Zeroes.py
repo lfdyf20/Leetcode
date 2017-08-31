@@ -1,3 +1,4 @@
+import numpy as np
 class Solution(object):
 	def findMaxForm(self, strs, m, n):
 		"""
@@ -14,13 +15,12 @@ class Solution(object):
 		for z,o in [ count(s) for s in strs ]:
 			for i in range(m, -1, -1):
 				for j in range(n, -1, -1):
-					if i >= z and j >= 0:
+					if i >= z and j >= o:
 						dp[i][j] = max( dp[i][j], dp[i-z][j-o]+1 )
-
 		return dp[m][n]
 
 
-strs, m, n = ["10", "0001", "111001", "1", "0"], 5,3
+strs, m, n = ["10", "0001", "111001", "1", "0"], 3,2
 
 sl = Solution()
 print( sl.findMaxForm( strs, m, n ) )
