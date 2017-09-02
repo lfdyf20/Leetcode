@@ -5,6 +5,7 @@ class Solution(object):
         :type primes: List[int]
         :rtype: int
         """
+        # index records which ele in uglies to multiply with
         index, uglies = [0]*len(primes), [1]
         while len(uglies) < n:
             uglies.append( min( [p * uglies[index[i]] for i,p in enumerate( primes )] ) )

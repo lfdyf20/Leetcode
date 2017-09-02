@@ -1,9 +1,31 @@
-a = [[1,2],[1,2,3,4]]
-b = 12+1234
+class Solution(object):
+    def sumNumbers(self, root):
+        """
+        :type root: TreeNode
+        :rtype: int
+        """
+        vals = []
 
-sumVal = 0
-for i in a:
-	strNum = ''.join(str(e) for e in i)
-	num = int(strNum)
-	sumVal += num
-print( sumVal == b )
+        def dfs(node, val):
+        	if node:
+        		curr = val*10 + node.val
+        		if not node.left and not node.right:
+        			vals.append( curr )
+        			return
+        		dfs(node.left, curr)
+        		dfs(node.right, curr)
+
+        dfs(root, 0)
+        return sum(vals)
+
+
+
+
+
+vals = '[1,2,3,4]'
+from Tree import BinaryTree
+t = BinaryTree(vals)
+
+root = t.getRoot() 
+sl = Solution()
+print( sl.sumNumbers( root ) )
