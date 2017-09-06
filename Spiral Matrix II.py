@@ -81,3 +81,52 @@ res = sl.generateMatrix(n)
 print(np.matrix(res))
 res = sl.mySolution(n)
 print(np.matrix(res))
+
+
+
+"""Mock Inetrview Solution
+
+"""
+import numpy as np
+class Solution(object):
+    def generateMatrix(self, n):
+        """
+        :type n: int
+        :rtype: List[List[int]]
+        """
+        if n == 0:
+        	return []
+        matrix = [ [0]*n for _ in range(n) ]
+        print(len(matrix), len(matrix[0]))
+        num = 1
+        i, j = 0, 0
+        while True:
+        	while j < n and matrix[i][j] == 0:
+        		matrix[i][j], num = num, num + 1
+        		j += 1
+        	i += 1
+        	j -= 1
+        	print(np.array(matrix))
+        	if num > n**2:
+        		break
+        	while i < n and matrix[i][j] == 0:
+        		matrix[i][j], num = num, num + 1
+        		i += 1
+        	j -= 1
+        	i -= 1
+        	print(np.array(matrix))
+        	while j >= 0 and matrix[i][j] == 0:
+        		matrix[i][j], num = num, num + 1
+        		j -= 1
+        	i -= 1
+        	j += 1
+        	print(np.array(matrix))
+        	if num > n**2:
+        		break
+        	while i >= 0 and matrix[i][j] == 0:
+        		matrix[i][j], num = num, num + 1
+        		i -= 1
+        	j += 1
+        	i += 1
+        	print(np.array(matrix))
+        return matrix
