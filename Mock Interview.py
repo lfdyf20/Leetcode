@@ -1,33 +1,14 @@
-import numpy as np
 class Solution(object):
-    def setZeroes(self, matrix):
+    def findRepeatedDnaSequences(self, s):
         """
-        :type matrix: List[List[int]]
-        :rtype: void Do not return anything, modify matrix in-place instead.
+        :type s: str
+        :rtype: List[str]
         """
-        m, n = len(matrix), len(matrix[0])
-        rows, cols = set(), set()
-        for i in range(m):
-            for j in range(n):
-                if matrix[i][j] == 0:
-                    rows.add(i)
-                    cols.add(j)
-        for i in range(m):
-            for j in range(n):
-                if i in rows or j in cols:
-                    matrix[i][j] = 0
+        
 
 
 
-matrix = [
-    [1,2,0,1,2],
-    [1,1,1,1,1],
-    [1,0,1,1,1]
-]
+s = "AAAAACCCCCAAAAACCCCCCAAAAAGGGTTT"
 
-matrix = [[0]]
-
-print(np.array(matrix))
 sl = Solution()
-sl.setZeroes( matrix )
-print(np.array(matrix))
+print( sl.findRepeatedDnaSequences( s ) )

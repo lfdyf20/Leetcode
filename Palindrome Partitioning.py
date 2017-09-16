@@ -20,6 +20,10 @@ class Solution(object):
 				self.travel(s[i+1:], path+[curr], res)
 
 
+	def online(self, s):
+		return [ [s[:i] for i in range()] ]
+
+
 	
 
 
