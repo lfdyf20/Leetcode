@@ -30,19 +30,28 @@ class Solution(object):
 			return minLength
 
 
+	def mySolution(self, s, nums):
+		total = left = 0
+		res = len(nums) + 1
+		for right, n in enumerate(nums):
+			total += n
+			while total >= s:
+				res = min(res, right - left + 1)
+				total -= nums[left]
+				left += 1
+		return res if res <= len(nums) else 0
 
 
 
-
-		
 
 
 
 
 s = 7
 nums = [2,3,1,2,4,3,1,7]
-nums = [2,3,1,2,4,3]
+# nums = [2,3,1,2,4,3]
 
 sl = Solution()
 print( sl.minSubArrayLen( s, nums ) )
+print( sl.mySolution(s, nums) )
 # print( sl.msa( s, nums ) )s
