@@ -1,109 +1,138 @@
 from math import floor
 class Solution(object):
-    def calculate(self, s):
-        """
-        :type s: str
-        :rtype: int
-        """
-        operators = ["-","+","*","/"]
-        stack = []
-        stack0 = []
-        for i in s:
-        	if not stack0:
-        		stack0.append(i)
-        	elif i.isdigit():
-        		temp = stack0.pop()
-        		if temp.isdigit():
-        			stack0.append(temp+i)
-        		else:
-        			stack0.append(temp)
-        			stack0.append(i)
-        	else:
-        		stack0.append(i)
+	def calculate(self, s):
+		"""
+		:type s: str
+		:rtype: int
+		"""
+		operators = ["-","+","*","/"]
+		stack = []
+		stack0 = []
+		for i in s:
+			if not stack0:
+				stack0.append(i)
+			elif i.isdigit():
+				temp = stack0.pop()
+				if temp.isdigit():
+					stack0.append(temp+i)
+				else:
+					stack0.append(temp)
+					stack0.append(i)
+			else:
+				stack0.append(i)
 
-        # print(stack0)
-        for i in stack0:
-        	if i == " ":
-        		continue
-        	elif i in operators:
-        		stack.append(i)
-        	else:
-        		if not stack:
-        			stack.append(i)
-        			continue
-        		temp = stack.pop()
-        		if temp.isdigit():
-        			stack.append( temp+i )
-        		elif temp == "+" or temp == "-":
-        			stack.append(temp)
-        			stack.append(i)
-        		else:
-        			x, y, f = stack.pop(), i, temp
-        			stack.append( self.compute(x,y,f) )
-        # print(stack)
-        op = ""
-        val = 0
-        for i in stack:
-        	if i.isdigit():
-        		if op == "":
-        			val = int(i)
-        			continue
-        		if op == "-":
-        			val -= int(i)
-        			continue
-        		if op == "+":
-        			val += int(i)
-        			continue
-        	else:
-        		op = i
+		# print(stack0)
+		for i in stack0:
+			if i == " ":
+				continue
+			elif i in operators:
+				stack.append(i)
+			else:
+				if not stack:
+					stack.append(i)
+					continue
+				temp = stack.pop()
+				if temp.isdigit():
+					stack.append( temp+i )
+				elif temp == "+" or temp == "-":
+					stack.append(temp)
+					stack.append(i)
+				else:
+					x, y, f = stack.pop(), i, temp
+					stack.append( self.compute(x,y,f) )
+		# print(stack)
+		op = ""
+		val = 0
+		for i in stack:
+			if i.isdigit():
+				if op == "":
+					val = int(i)
+					continue
+				if op == "-":
+					val -= int(i)
+					continue
+				if op == "+":
+					val += int(i)
+					continue
+			else:
+				op = i
 
-        return val
+		return val
 
-    def compute(self, x, y, f ):
-    	if f == "-":
-    		return str(int(x) - int(y))
-    	elif f == "+":
-    		return str(int(x) + int(y))
-    	elif f == "*":
-    		return str(int(x) * int(y))
-    	elif f == "/":
-    		return str(floor(int(x) / int(y)))
-    	else:
-    		return "error"
+	def compute(self, x, y, f ):
+		if f == "-":
+			return str(int(x) - int(y))
+		elif f == "+":
+			return str(int(x) + int(y))
+		elif f == "*":
+			return str(int(x) * int(y))
+		elif f == "/":
+			return str(floor(int(x) / int(y)))
+		else:
+			return "error"
 
 
-    def calculate2(self, s):
-	    if not s:
-	        return "0"
-	    stack, num, sign = [], 0, "+"
-	    for i in range(len(s)):
-	        if s[i].isdigit():
-	            num = num*10+ord(s[i])-ord("0")
-	        if (not s[i].isdigit() and not s[i].isspace()) or i == len(s)-1:
-	            if sign == "-":
-	                stack.append(-num)
-	            elif sign == "+":
-	                stack.append(num)
-	            elif sign == "*":
-	                stack.append(stack.pop()*num)
-	            else:
-	                tmp = stack.pop()
-	                if tmp//num < 0 and tmp%num != 0:
-	                    stack.append(tmp//num+1)
-	                else:
-	                    stack.append(tmp//num)
-	            sign = s[i]
-	            num = 0
-	    return sum(stack)
+	def calculate2(self, s):
+		if not s:
+			return "0"
+		stack, num, sign = [], 0, "+"
+		for i in range(len(s)):
+			if s[i].isdigit():
+				num = num*10+ord(s[i])-ord("0")
+			if (not s[i].isdigit() and not s[i].isspace()) or i == len(s)-1:
+				if sign == "-":
+					stack.append(-num)
+				elif sign == "+":
+					stack.append(num)
+				elif sign == "*":
+					stack.append(stack.pop()*num)
+				else:
+					tmp = stack.pop()
+					if tmp//num < 0 and tmp%num != 0:
+						stack.append(tmp//num+1)
+					else:
+						stack.append(tmp//num)
+				sign = s[i]
+				num = 0
+		return sum(stack)
 
+	def myCal(self, s):
+
+		def cal(sign,num):
+			if sign == "+":
+				stack.append(num)
+			elif sign == "-":
+				stack.append(-num)
+			elif sign == "*":
+				stack.append( stack.pop() * num )
+			else:
+				temp = stack.pop()
+				if temp//num < 0 and temp%num != 0:
+					stack.append( temp//num + 1 )
+				else:
+					stack.append( temp//num )
+
+		stack, num, sign = [], 0, "+"
+		for i in range(len(s)):
+			if s[i].isdigit():
+				num = num*10 + int(s[i])
+			elif s[i] == " ":
+				continue
+			else:
+				cal(sign,num)
+				sign = s[i]
+				num = 0
+		cal(sign,num)
+		return sum(stack)
 
 
 sl = Solution()
-S = ["3*2+4/2", "0/1", "0*1", "2/2/3", "2+4*12-43","14/3*2"]
+S = ["3 *2+ 4/2", "0/  1", "0 *1", "2/2/3", "  2+4*12-43","14/3*2"]
 for s in S:
-    res1 = sl.calculate(s)
-    # res2 = sl.cc(s)
-    # print(res1==res2, res1, res2)
+	res1 = sl.calculate(s)
+	res2 = sl.calculate2(s)
+	res3 = sl.myCal(s)
+	assert(res1 == res2 == res3)
 
 # s = "2+4*12-43"
 # print(sl.cc(s))

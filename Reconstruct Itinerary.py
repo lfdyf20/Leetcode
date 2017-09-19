@@ -46,6 +46,29 @@ class Solution(object):
 				self.travel( tickets, stack + [arr], path + [arr], res, n )
 
 
+	def mySolution(self, tickets):
+		ticketsDic = collections.defaultdict(list)
+		for depart, arrive in tickets:
+			ticketsDic[ depart ] += [arrive]
+
+		def dfs( depart, route ):
+			if len(route) == len(tickets) + 1:
+				return route
+			nextArrive = sorted( ticketsDic[ depart ] )
+			for arr in nextArrive:
+				ticketsDic[ depart ].remove( arr )
+				found = dfs( arr, route + [arr] )
+				if found:
+					return found
+				ticketsDic[ depart ].append( arr )
+
+		return dfs( "JFK", ["JFK"] )
+
+
+
+
+
+
 
 
 
@@ -57,4 +80,5 @@ class Solution(object):
 tickets = [["JFK","SFO"],["JFK","ATL"],["SFO","ATL"],["ATL","JFK"],["ATL","SFO"]]
 
 sl = Solution()
-print( sl.findItinerary( tickets ) )
+# print( sl.findItinerary( tickets ) )
+print( sl.mySolution(tickets) )
