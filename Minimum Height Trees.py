@@ -35,17 +35,42 @@ class Solution(object):
         		return list( res ) 
         	backDic = distDic.copy()
 
+    def mySolution(self, n, edges):
+        if n == 1:
+            return [0]
+        dic = collections.defaultdict( set )
+        for n1, n2 in edges:
+            dic[n1].add(n2)
+            dic[n2].add(n1)
+        if 1 <= len(dic) <= 2:
+                return list(dic.keys())
+        while dic:
+            memo = []
+            for node in dic:
+                if len(dic[node]) == 1:
+                    memo.append( node )
+            for node in memo:
+                for other in dic[node]:
+                    dic[ other ].remove( node )
+                del dic[node]
+            if 1 <= len(dic) <= 2:
+                return list(dic.keys())
+        return "ERROR"
 
 
-n = 6
-edges = [[0, 3], [1, 3], [2, 3], [4, 3], [5, 4]]
 
-n = 4
-edges = [[1,0],[1,2],[1,3]]
 
-# n = 7
-# edges = [[0,1],[1,2],[1,3],[2,4],[3,5],[4,6]]
+
+# n = 6
+# edges = [[0, 3], [1, 3], [2, 3], [4, 3], [5, 4]]
+
+# n = 4
+# edges = [[1,0],[1,2],[1,3]]
+
+n = 7
+edges = [[0,1],[1,2],[1,3],[2,4],[3,5],[4,6]]
 
 sl = Solution()
 print( sl.findMinHeightTrees( n, edges ) )
 # print( sl.mt(n, edges) )
+print( sl.mySolution(n, edges) )

@@ -29,7 +29,7 @@ class Solution(object):
 		else:
 			return minLength
 
-
+	#BETTER: a much more clearer way to code
 	def mySolution(self, s, nums):
 		total = left = 0
 		res = len(nums) + 1

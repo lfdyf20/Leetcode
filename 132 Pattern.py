@@ -39,6 +39,26 @@ class Solution(object):
     			stack.append( [ Min, curr ] )
     	return False
 
+    # REVIEW: need to think it through
+    def simpleOne(self, nums):
+        if len(nums) < 3:
+            return False
+
+        stack = [ [nums[0], nums[0]] ]
+        minVal = nums[0]
+        for num in nums[1:]:
+            if num <= minVal:
+                minVal = num
+            else:
+                while stack and stack[-1][0] < num:
+                    if num < stack[-1][1]:
+                        return True
+                    else:
+                        stack.pop()
+                stack.append( [minVal, num] )
+        return False
+
+
 
 
 
@@ -50,3 +70,4 @@ nums = [5,4,1,2,3]
 sl = Solution()
 print( sl.find132pattern( nums ) )
 print(sl.fp( nums ))
+print( sl.simpleOne(nums) )
