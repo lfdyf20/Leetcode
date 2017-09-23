@@ -5,7 +5,6 @@ class Solution(object):
 		:rtype: void Do not return anything, modify nums in-place instead.
 		"""
 		nums.sort()
-		print(nums)
 		half = len(nums[::2])
 		print(nums[:half][::-1])
 		print(nums[half:][::-1])

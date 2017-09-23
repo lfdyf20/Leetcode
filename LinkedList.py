@@ -4,7 +4,10 @@ class ListNode(object):
 		self.next = None
 
 class LinkedList(object):
-	"""docstring for LinkedList"""
+	"""[summary]
+	generate a linked list from input list of vals
+	[description]
+	"""
 	def __init__(self, nodeVals):
 		if not nodeVals:
 			return None
@@ -114,6 +117,15 @@ class LinkedList(object):
 			pre.next = None
 		self.__head = head
 		return self.__head 
+
+
+	def __str__(self):
+		curr = self.__head
+		output = ""
+		while curr:
+			output += "{} -> ".format(curr.val)
+			curr = curr.next
+		return output[:-4]
 
 
 
