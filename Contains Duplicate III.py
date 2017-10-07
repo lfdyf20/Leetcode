@@ -15,13 +15,28 @@ class Solution(object):
                     return True
                 j += 1
         return False
-        # for i in range( len(nums)-k ):
-        # 	# print( nums[i:1+i+k] )
-        # 	a = nums[i+1: i+1+k]
-        # 	b = min (  abs(max(a) - nums[i]), abs(min(a) - nums[i]))
-        # 	if b <= t:
-        # 		return True
-        # return False
+
+
+    def bucket(self, nums, k, t):
+        if t < 0:
+            return False
+        n = len(nums)
+        dic = {}
+        w = t + 1
+        for i in range(n):
+            m = nums[i] // w
+            if m in dic:
+                return True
+            if m-1 in dic and abs(nums[i]-dic[m-1]) < w:
+                return True
+            if m+1 in dic and abs(nums[i]-dic[m+1]) < w:
+                return True
+            dic[m] = nums[i]
+            if i >= k:
+                del dic[nums[i-k]/w]
+        return False
+
+
 
 
 
