@@ -10,6 +10,7 @@ class Solution(object):
         	while stack and stack[-1]<num:
         		record[ stack.pop() ] = num
         	stack.append(num)
+        print(record)
         res = []
         for num in findNums:
         	if num in record:
