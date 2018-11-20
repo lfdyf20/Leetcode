@@ -10,7 +10,7 @@ with open( fileName, 'r' ) as f:
 	match = re.search("def (\w+)\(self, ([, \w]+)\)", content)
 	matchSL = re.search("sl.=.Solution", content)
 	# print(matchSL.groups())
-	if matchSL == None:
+	if matchSL == None and match:
 		funcName = match.group(1)
 		varName = match.group(2)
 		content
