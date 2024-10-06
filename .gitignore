@@ -8,4 +8,6 @@ try.py
 .vscode/
 cache
 .idea/
+.vs/
+x64/
 
