@@ -1,14 +1,18 @@
 #include <iostream>
 #include "Printer.h"
 #include "Node.h"
-#include "Maximum Depth of N-ary Tree.h"
+#include "TreeNode.h"
+
+
+#include "Two Sum IV - Input is a BST.h"
 
 int main() {
 	Printer printer;
+	Solution solution;
 	
-	// test case: [1,null,3,2,4,null,5,6]
-	std::vector<int> v = { 1, NULL, 3, 2, 4, NULL, 5, 6 };
-	Node* root = new Node(v);
-	Solution s;
-	printer.print(s.maxDepth(root));
+	// test case: [5,3,6,2,4,null,7]
+	std::vector<int> v = { 5,3,6,2,4,NULL,7 };
+	TreeNode* root = TreeNode::createTree(v);
+	
+	printer.print(solution.findTarget(root, 9)); // expected: true
 }

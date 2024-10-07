@@ -49,6 +49,11 @@ Node::Node(std::vector<int> v)
 	}
 }
 
+void Node::print()
+{
+	this->print(0, 0, false);
+}
+
 void Node::print(int currDepth, int parentDepth, bool isLastChild) {
 	using namespace std;
 

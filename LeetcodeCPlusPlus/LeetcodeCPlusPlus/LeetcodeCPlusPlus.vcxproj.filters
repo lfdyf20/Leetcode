@@ -25,6 +25,12 @@
     <Filter Include="Header Files\Problems">
       <UniqueIdentifier>{ac7dfa8d-dc6f-4ecb-92d8-008439b9b710}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\BaseClasses">
+      <UniqueIdentifier>{9d6eaa81-eb33-412f-8513-37e03480bbdf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\BaseClasses">
+      <UniqueIdentifier>{e94e3068-41ff-40c6-888e-e7433d65e4a5}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -40,7 +46,10 @@
       <Filter>Header Files\Problems</Filter>
     </ClCompile>
     <ClCompile Include="Node.cpp">
-      <Filter>Source Files\Problems</Filter>
+      <Filter>Source Files\BaseClasses</Filter>
+    </ClCompile>
+    <ClCompile Include="TreeNode.cpp">
+      <Filter>Source Files\BaseClasses</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -50,10 +59,16 @@
     <ClInclude Include="Printer.h">
       <Filter>Header Files\Tools</Filter>
     </ClInclude>
-    <ClInclude Include="Node.h">
+    <ClInclude Include="Maximum Depth of N-ary Tree.h">
       <Filter>Header Files\Problems</Filter>
     </ClInclude>
-    <ClInclude Include="Maximum Depth of N-ary Tree.h">
+    <ClInclude Include="TreeNode.h">
+      <Filter>Header Files\BaseClasses</Filter>
+    </ClInclude>
+    <ClInclude Include="Node.h">
+      <Filter>Header Files\BaseClasses</Filter>
+    </ClInclude>
+    <ClInclude Include="Two Sum IV - Input is a BST.h">
       <Filter>Header Files\Problems</Filter>
     </ClInclude>
   </ItemGroup>

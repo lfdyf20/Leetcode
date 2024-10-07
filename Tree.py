@@ -7,6 +7,9 @@ class TreeNode(object):
 		self.left = None
 		self.right = None
 
+	def __str__(self) -> str:
+		return str(self.val)
+
 class AVLTreeNode(object):
 	def __init__(self, x):
 		self.val = x

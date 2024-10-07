@@ -132,12 +132,15 @@
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Node.cpp" />
     <ClCompile Include="Printer.cpp" />
+    <ClCompile Include="TreeNode.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Fibonacci Number.h" />
     <ClInclude Include="Maximum Depth of N-ary Tree.h" />
     <ClInclude Include="Node.h" />
     <ClInclude Include="Printer.h" />
+    <ClInclude Include="TreeNode.h" />
+    <ClInclude Include="Two Sum IV - Input is a BST.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -5,6 +5,11 @@ void Printer::print(int n) {
 	std::cout << n << std::endl;
 }
 
+void Printer::print(bool b)
+{
+	std::cout << (b ? "true" : "false") << std::endl;
+}
+
 void Printer::print(std::vector<int> v) {
 	std::cout << "[";
 	for (int i = 0; i < v.size(); i++) {

@@ -13,5 +13,8 @@ public:
 
     Node(std::vector<int> v);
 
+    void print();
+
+private:
     void print(int currDepth, int parentDepth, bool isLastChild);
 };
