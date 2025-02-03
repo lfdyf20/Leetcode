@@ -51,6 +51,9 @@
     <ClCompile Include="TreeNode.cpp">
       <Filter>Source Files\BaseClasses</Filter>
     </ClCompile>
+    <ClCompile Include="Longest Strictly Increasing or Strictly Decreasing Subarray.h">
+      <Filter>Header Files\Problems</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Fibonacci Number.h">

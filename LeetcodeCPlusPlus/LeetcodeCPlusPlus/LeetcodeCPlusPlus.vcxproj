@@ -129,6 +129,7 @@
   <ItemGroup>
     <ClCompile Include="Fibonacci Number.cpp" />
     <ClCompile Include="Image Smoother.h" />
+    <ClCompile Include="Longest Strictly Increasing or Strictly Decreasing Subarray.h" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Node.cpp" />
     <ClCompile Include="Printer.cpp" />
